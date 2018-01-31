@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <title>Lista produktów</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(products)}">
+        <h2>Lista produktów</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+                <th>Nazwa produktu</th>
+                <th>Sklep</th>
+                <th>Częstość używania(Razy w tygodniu)</th>
+                <th>Średni koszt(Zł)</th>
+            
+            </tr>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}">Id</td>
+                <td th:text="${product.productName}">Nazwa produktu</td>
+                <td th:text="${product.shop}">Sklep</td>
+                <td th:text="${product.frequencyOfUse}">Częstość używania(Razy w tygodniu)</td>
+                <td th:text="${product.averageCost}">Średni koszt(Zł)</td>
+               
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>
