@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html, width=device-width, initial-scale=1; charset=UTF-8"/>
+    <meta name="_csrf_parameter" content="_csrf" />
+        <meta name="_csrf_header" content="X-CSRF-TOKEN" />
+        <meta name="_csrf" content="e62835df-f1a0-49ea-bce7-bf96f998119c" />
+    <script src="../../static/js/registerFrom.js"
+		th:src="@{js/registerFrom.js}"></script>
+<script src="../../static/js/ajaxPost.js"
+		th:src="@{js/ajaxPost.js}"></script>
+		<link href="../../static/css/bootstrap.min.css" th:href="@{/css/tlo.css}"
+		rel="stylesheet" media="screen" />
+    <title>Rejestracja</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+
+<div class="row" style="margin-bottom:20px">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+    <div class="panel panel-default">
+        <div class="panel-heading clearfix">
+          <h3 class="panel-title"><b>Rejestracja</b></h3>
+        </div>
+        <div class="panel-body">
+		<form action="/dodajUsera" method="POST" id="customerForm">
+			<hr class="colorgraph"></hr>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+					
+                        <input type="text" name="firstName" id="firstName" class="form-control input-lg" placeholder="Imię" tabindex="1"></input>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="text" name="lastName" id="lastName" class="form-control input-lg" placeholder="Nazwisko" tabindex="2"></input>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Adres Email" tabindex="4"></input>
+			</div>
+			<div class="form-group">
+				<input type="text" name="age" id="age" class="form-control input-lg" placeholder="Wiek" tabindex="5"></input>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Hasło" tabindex="6"></input>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					<div class="form-group">
+						<input type="password" name="passwordConfirm" id="passwordConfirm" class="form-control input-lg" placeholder="Potwierdz Hasło" tabindex="7"></input>
+					</div>
+					<input type="hidden" name="${_csrf.parameterName}"
+            value="${_csrf.token}" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-4 col-sm-3 col-md-3">
+					<span class="button-checkbox">
+						<button type="button" class="btn" data-color="info" tabindex="8">Zgadzam się</button>
+                        <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1"></input>
+					</span>
+				</div>
+				<div class="col-xs-8 col-sm-9 col-md-9">
+					 
+				</div>
+			</div>
+			
+			<hr class="colorgraph"></hr>
+			<div class="row">
+				<div class="col-xs-12 col-md-6"><input type="submit" value="Zarejestruj" class="btn btn-primary btn-block btn-lg" tabindex="8"></input></div>
+				<div class="col-xs-12 col-md-6"><a href="/login" class="btn btn-success btn-block btn-lg">Zaloguj się</a></div>
+			</div>		
+		</form>
+	</div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			
+			
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" data-dismiss="modal">Zgadzam się</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</div>
+</div>
+	
+</div>
+<script type="text/javascript">
+var header = $("meta[name='_csrf_header']").attr("content");
+var token = $("meta[name='_csrf']").attr("content");
+ 
+$.ajax({
+    url: '/dodajUsera',
+    type: 'POST',
+    beforeSend: function(xhr){
+        xhr.setRequestHeader(header, token);
+    },
+    success: function(data) {
+        console.log(data);
+    },
+    error: function (xhr, ajaxOptions, thrownError) {
+        console.log(xhr.status + ": " + thrownError);
+    }
+});
+</script>
+
+
+</body>
+</html>

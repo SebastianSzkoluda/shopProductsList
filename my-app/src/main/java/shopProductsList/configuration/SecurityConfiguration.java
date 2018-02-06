@@ -44,8 +44,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	}
 	@Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
-    	httpSecurity.csrf().disable();
+		httpSecurity.csrf().disable();
         httpSecurity.authorizeRequests()
+       .antMatchers("/contact").permitAll()
+       .antMatchers("/register").permitAll()
+       .antMatchers("/dodajUsera").permitAll()
+       .antMatchers("/").permitAll().antMatchers("*/register/**").permitAll()       
+       .antMatchers("/").permitAll().antMatchers("*/register/**").permitAll()
         .anyRequest().fullyAuthenticated().and()
         .formLogin().loginPage("/login").failureUrl("/login?error").usernameParameter("email").permitAll().and()
         .logout().logoutUrl("/logout").deleteCookies("remember-me").logoutSuccessUrl("/").permitAll().and().rememberMe();

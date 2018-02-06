@@ -12,7 +12,7 @@
 						<div class="navbar-header">
 							<a class="navbar-brand" href="#" th:href="@{/}">Strona główna</a>
 							<ul class="nav navbar-nav">
-								<li><a href="#" th:href="@{/kontakt}">Kontakt</a></li>				
+								<li><a href="contact" th:href="@{/contact}">Kontakt</a></li>				
 									<li class="dropdown">
 		    <a sec:authorize="hasAuthority('user')" href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="false">
 		        Konto <b class="caret"></b>
@@ -37,8 +37,8 @@
 					</ul>  
 						</div>
 						<ul class="nav navbar-nav navbar-right">
-						    <li><a sec:authorize="isAnonymous()" th:href="@{/}" href="#"><span class="glyphicon glyphicon-user"></span> Rejestracja</a></li>
-	      <li><a sec:authorize="isAnonymous()"  th:href="@{/login}" href="#"><span class="glyphicon glyphicon-log-in"></span> Zaloguj</a></li>
+						    <li><a sec:authorize="isAnonymous()" th:href="@{/register}" href="/register"><span class="glyphicon glyphicon-user"></span> Rejestracja</a></li>
+	      <li><a sec:authorize="isAnonymous()"  th:href="@{/login}" href="/login"><span class="glyphicon glyphicon-log-in"></span> Zaloguj</a></li>
 								</ul>
 									<div>					
 						

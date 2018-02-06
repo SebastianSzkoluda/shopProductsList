@@ -9,5 +9,6 @@ import shopProductsList.entity.FamilyUser;
 public interface FamilyUserRepository extends CrudRepository<FamilyUser,Integer>{
 	@Query("SELECT fu FROM FamilyUser fu WHERE fu.email LIKE :email ")
 	FamilyUser findByEmail(@Param("email") String email);
+	
 
 }

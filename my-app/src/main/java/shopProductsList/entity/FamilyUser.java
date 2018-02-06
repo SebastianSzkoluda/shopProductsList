@@ -27,6 +27,17 @@ public class FamilyUser {
 	
 	@Column(name = "age")
 	Integer age;
+	
+	@Column(name = "passwordConfirm")
+	String passwordConfirm;
+	
+	public String getPasswordConfirm() {
+		return passwordConfirm;
+	}
+
+	public void setPasswordConfirm(String passwordConfirm) {
+		this.passwordConfirm = passwordConfirm;
+	}
 
 	public Integer getId() {
 		return id;

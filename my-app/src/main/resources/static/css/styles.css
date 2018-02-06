@@ -37,3 +37,62 @@
     background-color: #4CAF50;
     color: white;
 }
+.success-popup  {
+    transition: .3s ease all;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*Font-awesome integration*/
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+/*Google font integration*/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+#contact{
+    background-color:#f1f1f1;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+#contact .well{
+	max-width: 1100px;
+    margin-top:30px;
+    margin-right: 150px;
+    border-radius:0;
+}
+
+#contact .form-control{
+	max-width: 400px;
+	
+    border-radius: 0;
+    border:2px solid #1e1e1e;
+}
+
+#contact button{
+	
+    border-radius:3;
+    border:2px solid #1e1e1e;
+}
+
+#contact .row{
+    margin-bottom:30px;
+}
+
+@media (max-width: 768px) { 
+    #contact iframe {
+        margin-bottom: 15px;
+    }
+    
+}
+
+#con{
+	width: 100%;
+}
+
+#outer {
+  width: 100%;
+  
+}
+
+#inner {
+  margin: 0 auto;
+}
