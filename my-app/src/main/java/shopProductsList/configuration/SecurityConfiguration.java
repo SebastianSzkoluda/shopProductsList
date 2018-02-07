@@ -48,6 +48,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         httpSecurity.authorizeRequests()
        .antMatchers("/contact").permitAll()
        .antMatchers("/register").permitAll()
+       .antMatchers("/addProduct").permitAll()
+       .antMatchers("/dodajProdukt").permitAll()
        .antMatchers("/dodajUsera").permitAll()
        .antMatchers("/").permitAll().antMatchers("*/register/**").permitAll()       
        .antMatchers("/").permitAll().antMatchers("*/register/**").permitAll()

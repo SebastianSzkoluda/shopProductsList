@@ -10,7 +10,10 @@
 </head>
 <body>
 <div class="container" id="containerDiv" >
+ 
     <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+ <a href="/addProduct"><button type="submit" id="addButton" class="btn btn-success">
+ <span class="glyphicon glyphicon-plus"></span> Dodaj nowy produkt</button></a>
     <div class="table" id="tableDiv" th:if="${not #lists.isEmpty(products)}">
         <h2>Lista produktów</h2>
         <table class="table table-striped" id="users">
@@ -20,6 +23,8 @@
                 <th>Sklep</th>
                 <th>Częstość używania(Razy w tygodniu)</th>
                 <th>Średni koszt(Zł)</th>
+                <th>Ilość produktu[g]</th>
+                <th>Średnie zużycie na dzień[g]</th>
             
             </tr>
             <tr th:each="product : ${products}">
@@ -28,6 +33,8 @@
                 <td th:text="${product.shop}">Sklep</td>
                 <td th:text="${product.frequencyOfUse}">Częstość używania(Razy w tygodniu)</td>
                 <td th:text="${product.averageCost}">Średni koszt(Zł)</td>
+                <td th:text="${product.amount}">Ilość produktu[g]</td>
+                <td th:text="${product.amountPerDay}">Średnie zużycie na dzień[g]</td>
                
             </tr>
         </table>

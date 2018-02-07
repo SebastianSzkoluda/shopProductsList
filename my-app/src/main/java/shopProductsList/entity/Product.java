@@ -28,6 +28,12 @@ public class Product {
 	@Column(name = "averageCost")
 	 double averageCost;
 
+	@Column(name ="amount")
+	 double amount;
+	
+	@Column(name = "amountPerDay")
+	 double amountPerDay;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -66,6 +72,22 @@ public class Product {
 
 	public void setAverageCost(double averageCost) {
 		this.averageCost = averageCost;
+	}
+
+	public double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+
+	public double getAmountPerDay() {
+		return amountPerDay;
+	}
+
+	public void setAmountPerDay(double amountPerDay) {
+		this.amountPerDay = amountPerDay;
 	}
 	
 	

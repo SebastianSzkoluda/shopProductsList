@@ -19,7 +19,12 @@
         min-height: 100%; 
         
 }
-
+#addButton{
+	float: right;
+}
+#containerDiv button{
+	float: right;
+}
 #users{
 	 font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -37,6 +42,7 @@
     background-color: #4CAF50;
     color: white;
 }
+
 .success-popup  {
     transition: .3s ease all;
     font-family: 'Roboto', sans-serif;
