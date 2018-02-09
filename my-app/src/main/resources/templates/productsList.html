@@ -25,6 +25,7 @@
                 <th>Średni koszt(Zł)</th>
                 <th>Ilość produktu[g]</th>
                 <th>Średnie zużycie na dzień[g]</th>
+                <th> </th>
             
             </tr>
             <tr th:each="product : ${products}">
@@ -35,6 +36,10 @@
                 <td th:text="${product.averageCost}">Średni koszt(Zł)</td>
                 <td th:text="${product.amount}">Ilość produktu[g]</td>
                 <td th:text="${product.amountPerDay}">Średnie zużycie na dzień[g]</td>
+                <td > <form method="POST" th:action="@{/{id}/delete(id=${product.id})}">
+                <button type="submit" class="btn btn-danger" aria-label="Left Align">
+ 				<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Usuń
+				</button></form></td>
                
             </tr>
         </table>

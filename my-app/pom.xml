@@ -43,7 +43,7 @@
 
 		<!--WebJars -->
 
-	
+
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>bootstrap</artifactId>
@@ -51,11 +51,11 @@
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.webjars.bower/bootstrap -->
 
-   <dependency>
-    <groupId>org.webjars.bower</groupId>
-    <artifactId>bootstrap</artifactId>
-    <version>3.3.4</version>
-</dependency>
+		<dependency>
+			<groupId>org.webjars.bower</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.3.4</version>
+		</dependency>
 		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>jquery</artifactId>
@@ -85,9 +85,9 @@
 
 		<!-- https://mvnrepository.com/artifact/org.webjars.bower/bootstrap-dropdown-checkbox -->
 
- 
-        
-        
+
+
+
 	</dependencies>
 
 	<build>
@@ -99,15 +99,15 @@
 		</plugins>
 	</build>
 	<repositories>
-    <repository>
-        <id>spring-releases</id>
-        <url>https://repo.spring.io/libs-release</url>
-    </repository>
-</repositories>
-<pluginRepositories>
-    <pluginRepository>
-        <id>spring-releases</id>
-        <url>https://repo.spring.io/libs-release</url>
-    </pluginRepository>
-</pluginRepositories>
+		<repository>
+			<id>spring-releases</id>
+			<url>https://repo.spring.io/libs-release</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>spring-releases</id>
+			<url>https://repo.spring.io/libs-release</url>
+		</pluginRepository>
+	</pluginRepositories>
 </project>

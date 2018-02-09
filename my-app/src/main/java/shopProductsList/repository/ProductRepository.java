@@ -10,4 +10,7 @@ import shopProductsList.entity.Product;
 public interface ProductRepository extends CrudRepository<Product, Integer>{
 	@Query("SELECT p FROM Product p WHERE p.shop LIKE :shop ")
 	Product findByShop(@Param("shop") String shop);
+	
+	@Query("SELECT p FROM Product p WHERE p.id LIKE :id ")
+	Product findById(@Param("id") Integer id);
 }

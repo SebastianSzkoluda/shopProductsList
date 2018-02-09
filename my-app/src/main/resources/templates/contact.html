@@ -2,8 +2,8 @@
 <html>
 <head lang="en">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link href="../../static/css/bootstrap.min.css" th:href="@{/css/tlo.css}"
-		rel="stylesheet" media="screen" />
+<link href="../../static/css/bootstrap.min.css"
+	th:href="@{/css/tlo.css}" rel="stylesheet" media="screen" />
 <title>Interaktywna Lista Zakupow</title>
 
 <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
@@ -15,44 +15,56 @@
 
 
 	<div class="container" id="containerDiv">
-	<div id="outer">
-		<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
-		<section id="contact">
-  <div class="container" id="inner">
-    <div class="well well-sm" id="con">
-      <h3><strong>Skontaktuj się z nami!</strong></h3>
-    </div>
-	
-	<div class="row">
-	  <div class="col-md-7">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20038.65257552609!2d17.026366332130568!3d51.11156764075403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fe82a7836289b%3A0xb8f93f04c5c8d70f!2sPolitechnika+Wroc%C5%82awska!5e0!3m2!1spl!2spl!4v1517933855180" width="100%" height="315" frameborder="0" style="border:0" allowfullscreen="true"></iframe>
-      </div>
+		<div id="outer">
+			<!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+			<section id="contact">
+				<div class="container" id="inner">
+					<div class="well well-sm" id="con">
+						<h3>
+							<strong>Skontaktuj się z nami!</strong>
+						</h3>
+					</div>
 
-      <div class="col-md-5">
-          <h4><strong>Pozostańmy w kontakcie</strong></h4>
-        <form>
-          <div class="form-group">
-            <input type="text" class="form-control" name="" value="" size="50" placeholder="Imię"></input>
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control" name="" value="" size="50" placeholder="E-mail"></input>
-          </div>
-          <div class="form-group">
-            <input type="tel" class="form-control" name="" value="" size="50" placeholder="Numer telefonu"></input>
-          </div>
-          <div class="form-group">
-            <textarea class="form-control" name="" rows="3" size="50" placeholder="Wiadomość"></textarea>
-          </div>
-          <button class="btn btn-default" type="submit" name="button">
-              <span class="fa fa-envelope-o" aria-hidden="true"></span> Wyślij
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
+					<div class="row">
+						<div class="col-md-7">
+							<iframe
+								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20038.65257552609!2d17.026366332130568!3d51.11156764075403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470fe82a7836289b%3A0xb8f93f04c5c8d70f!2sPolitechnika+Wroc%C5%82awska!5e0!3m2!1spl!2spl!4v1517933855180"
+								width="100%" height="315" frameborder="0" style="border: 0"
+								allowfullscreen="true"></iframe>
+						</div>
+
+						<div class="col-md-5">
+							<h4>
+								<strong>Pozostańmy w kontakcie</strong>
+							</h4>
+							<form>
+								<div class="form-group">
+									<input type="text" class="form-control" name="" value=""
+										size="50" placeholder="Imię"></input>
+								</div>
+								<div class="form-group">
+									<input type="email" class="form-control" name="" value=""
+										size="50" placeholder="E-mail"></input>
+								</div>
+								<div class="form-group">
+									<input type="tel" class="form-control" name="" value=""
+										size="50" placeholder="Numer telefonu"></input>
+								</div>
+								<div class="form-group">
+									<textarea class="form-control" name="" rows="3" size="50"
+										placeholder="Wiadomość"></textarea>
+								</div>
+								<button class="btn btn-default" type="submit" name="button">
+									<span class="fa fa-envelope-o" aria-hidden="true"></span>
+									Wyślij
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
 	</div>
-	</div>
-	 
+
 </body>
 </html>
