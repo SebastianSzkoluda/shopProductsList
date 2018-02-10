@@ -13,6 +13,7 @@ import shopProductsList.entity.Family;
 import shopProductsList.entity.FamilyUser;
 import shopProductsList.repository.FamilyUserRepository;
 import shopProductsList.service.FamilyService;
+import shopProductsList.service.FamilyUserService;
 
 
 @Controller
@@ -20,6 +21,9 @@ public class CreateFamilyController {
 
 	@Autowired
 	FamilyService familyService;
+	
+	@Autowired 
+	FamilyUserService familyUserService;
 	
 	@Autowired
 	FamilyUserRepository familyUserRepository;
@@ -37,10 +41,8 @@ public class CreateFamilyController {
 		familyService.saveFamily(family);
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		FamilyUser familyUser = familyUserRepository.findByEmail(auth.getName());
-		
-		
 		familyUser.setFamilyNameInUser(family.getFamilyName());
-				
+		familyUserService.saveUser(familyUser);	
 		return "index";
 				
 	}

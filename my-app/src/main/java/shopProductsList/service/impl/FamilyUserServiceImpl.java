@@ -40,10 +40,10 @@ public class FamilyUserServiceImpl implements FamilyUserService {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		FamilyUser familyUser = familyUserRepository.findByEmail(auth.getName());
 		if(familyUser.getFamilyNameInUser() == null) {
-			return true;
+			return false;
 		}
 		else {
-			return false;
+			return true;
 		}
 		
 	}

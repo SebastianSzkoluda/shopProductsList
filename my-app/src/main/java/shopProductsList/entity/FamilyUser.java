@@ -31,6 +31,7 @@ public class FamilyUser {
 	@Column(name = "passwordConfirm")
 	String passwordConfirm;
 	
+	
 	@Column(name = "f_familyName")
 	String familyNameInUser;
 	
