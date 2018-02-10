@@ -19,7 +19,20 @@
         min-height: 100%; 
         
 }
-
+#containerDivContact {
+	   display: block;
+            background: rgba(1000, 1000, 1000, 0.65);
+        min-height: 100%; 
+        
+}
+.unstyled-button {
+  border: none;
+  padding: 0;
+  background: none;
+}
+h2 a{
+	float:right;
+}
 #addButton{
 	float: right;
 }

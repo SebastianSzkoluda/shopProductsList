@@ -12,10 +12,17 @@
 <div class="container" id="containerDiv" >
  
     <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
- <a href="/addProduct"><button type="submit" id="addButton" class="btn btn-success">
- <span class="glyphicon glyphicon-plus"></span> Dodaj nowy produkt</button></a>
+   
     <div class="table" id="tableDiv" th:if="${not #lists.isEmpty(products)}">
-        <h2>Lista produktów</h2>
+  
+        
+         <h2>Lista produktów
+          <a href="/addProduct"><button type="submit"  class="btn btn-success">
+		 <span class="glyphicon glyphicon-plus"></span> Dodaj nowy produkt</button></a>
+		<a href="/productsList"><button type="button"  class="btn btn-default">
+ 		 <span class="glyphicon glyphicon-refresh"></span>Odśwież liste</button></a>  
+ 		 </h2>       
+     
         <table class="table table-striped" id="users">
             <tr>
                 <th>Id</th>
