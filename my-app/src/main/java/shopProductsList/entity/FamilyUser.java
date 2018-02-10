@@ -31,6 +31,17 @@ public class FamilyUser {
 	@Column(name = "passwordConfirm")
 	String passwordConfirm;
 	
+	@Column(name = "f_familyName")
+	String familyNameInUser;
+	
+	public String getFamilyNameInUser() {
+		return familyNameInUser;
+	}
+
+	public void setFamilyNameInUser(String familyNameInUser) {
+		this.familyNameInUser = familyNameInUser;
+	}
+
 	public String getPasswordConfirm() {
 		return passwordConfirm;
 	}

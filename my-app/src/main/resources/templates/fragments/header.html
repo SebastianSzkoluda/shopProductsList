@@ -12,8 +12,8 @@
 					<div class="navbar-header">
 						<a class="navbar-brand" href="#" th:href="@{/}">Strona główna</a>
 						<ul class="nav navbar-nav">
-							<li><a href="contact" th:href="@{/contact}">Kontakt</a></li>
-							<li class="dropdown"><a sec:authorize="hasAuthority('user')"
+							<li><a href="/contact" th:href="@{/contact}">Kontakt</a></li>
+							<li class="dropdown"><a sec:authorize="hasAuthority('user')" th:if="${@familyUserService.doesLoadUserHaveAFamily()}"
 								href="#" class="dropdown-toggle" data-toggle="dropdown"
 								data-hover="dropdown" data-delay="1000"
 								data-close-others="false"> Konto <b class="caret"></b>
@@ -34,6 +34,8 @@
 									<li><a tabindex="-1" href="#">Link2</a></li>
 									<li><a tabindex="-1" href="#">Link3</a></li>
 								</ul></li>
+							<li><a sec:authorize="hasAuthority('user')" href="/createFamily" th:href="@{/createFamily}">
+							<span class="glyphicon glyphicon-plus"></span>Stwórz rodzinke</a></li>	
 						</ul>
 					</div>
 					<ul class="nav navbar-nav navbar-right">
