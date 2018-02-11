@@ -51,7 +51,7 @@ public class ProductServiceImpl implements ProductService {
 	
 	
 	
-	@Transactional
+	
 	@Override
 	public List<Product> currentFamilyProducts() {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
@@ -68,17 +68,11 @@ public class ProductServiceImpl implements ProductService {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		FamilyUser familyUser = familyUserRepository.findByEmail(auth.getName());
 		Family family = familyRepository.findByName(familyUser.getFamilyNameInUser());
-		family.getProducts().add(product);
-		product.setFamilyNameInProduct(familyUser.getFamilyNameInUser());
 		
+		product.setFamilyNameInProduct(familyUser.getFamilyNameInUser());
+		family.getProducts().add(product);
 	}
-	@Override
-	public List<Product> listAllProductsOfFamily() {
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		FamilyUser familyUser = familyUserRepository.findByEmail(auth.getName());
-		Family family = familyRepository.findByName(familyUser.getFamilyNameInUser());
-		return productRepository.listCurrentFamilyProducts(family.getFamilyName());
-	}
+	
 	
 
 }

@@ -16,6 +16,5 @@ public interface ProductRepository extends CrudRepository<Product, Integer>{
 	@Query("SELECT p FROM Product p WHERE p.id LIKE :id ")
 	Product findById(@Param("id") Integer id);
 	
-	@Query("SELECT p FROM Product p WHERE p.familyNameInProduct = ?1")
-	List<Product> listCurrentFamilyProducts(String familyName);
+
 }
