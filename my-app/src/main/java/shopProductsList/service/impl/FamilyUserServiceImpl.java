@@ -1,5 +1,7 @@
 package shopProductsList.service.impl;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -46,6 +48,14 @@ public class FamilyUserServiceImpl implements FamilyUserService {
 			return true;
 		}
 		
+	}
+
+	@Transactional
+	@Override
+	public void addingUserToFamily(FamilyUser familyUser) {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		FamilyUser familyUserTemp = familyUserRepository.findByEmail(auth.getName());
+		familyUser.setFamilyNameInUser(familyUserTemp.getFamilyNameInUser());
 	}
 
 	

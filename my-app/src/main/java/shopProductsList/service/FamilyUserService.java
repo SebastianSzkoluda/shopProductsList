@@ -12,5 +12,5 @@ public interface FamilyUserService {
 	Iterable<FamilyUser> listAllUsers();	
 	FamilyUser findUserByEmail(String email);
 	boolean doesLoadUserHaveAFamily();
-	
+	void addingUserToFamily(FamilyUser familyUser);
 }

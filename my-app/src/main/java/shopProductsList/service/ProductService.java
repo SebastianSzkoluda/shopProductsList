@@ -11,6 +11,5 @@ public interface ProductService {
 	Product findProductById(Integer id);
 	void deleteProduct(Integer id);
 	List<Product> currentFamilyProducts();
-	
 	void addingProductToFamilyProductList(Product product);
 }

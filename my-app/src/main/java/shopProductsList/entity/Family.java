@@ -17,13 +17,12 @@ import javax.persistence.Table;
 public class Family {
 	
 	@Id
-	@Column(name = "familyId")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	 Integer familyId;
-	
 	@Column(name = "familyName")
 	 String familyName;
 	
+	@Column(name = "familyId")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	 Integer familyId;	
 	
 	@Column(name = "numberOfMembers")
 	 Integer numberOfMembers;
