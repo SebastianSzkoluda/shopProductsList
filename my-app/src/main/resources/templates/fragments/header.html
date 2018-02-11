@@ -35,7 +35,9 @@
 									<li><a tabindex="-1" href="#">Link3</a></li>
 								</ul></li>
 							<li><a sec:authorize="hasAuthority('user')" th:if="${!@familyUserService.doesLoadUserHaveAFamily()}" href="/createFamily" th:href="@{/createFamily}">
-							<span class="glyphicon glyphicon-plus"></span>Stwórz rodzinke</a></li>	
+							<span class="glyphicon glyphicon-plus"></span>Stwórz rodzinke</a></li>
+							<li><a sec:authorize="hasAuthority('user')" th:if="${@familyUserService.doesLoadUserHaveAFamily()}" href="/addUserToFamily" th:href="@{/addUserToFamily}">
+							<span class="glyphicon glyphicon-plus"></span>Dodaj Użytkownika do swojej rodzinki</a></li>	
 						</ul>
 					</div>
 					<ul class="nav navbar-nav navbar-right">

@@ -27,6 +27,7 @@ public class AddProductController {
 	String addingProduct(@ModelAttribute("product") Product product) {
 	
 		productService.saveProduct(product);
+		productService.addingProductToFamilyProductList(product);
 		
 		return "productsList";
 				

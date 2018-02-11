@@ -1,5 +1,7 @@
 package shopProductsList.service;
 
+import java.util.List;
+
 import shopProductsList.entity.Product;
 
 public interface ProductService {
@@ -8,4 +10,7 @@ public interface ProductService {
 	void saveProduct(Product product);
 	Product findProductById(Integer id);
 	void deleteProduct(Integer id);
+	List<Product> currentFamilyProducts();
+	List<Product> listAllProductsOfFamily();
+	void addingProductToFamilyProductList(Product product);
 }

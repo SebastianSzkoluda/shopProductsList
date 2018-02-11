@@ -34,6 +34,18 @@ public class Product {
 	@Column(name = "amountPerDay")
 	 double amountPerDay;
 	
+	@Column(name = "f_familyName")
+	 String familyNameInProduct;
+	
+	
+	public String getFamilyNameInProduct() {
+		return familyNameInProduct;
+	}
+
+	public void setFamilyNameInProduct(String familyNameInProduct) {
+		this.familyNameInProduct = familyNameInProduct;
+	}
+
 	public Integer getId() {
 		return id;
 	}

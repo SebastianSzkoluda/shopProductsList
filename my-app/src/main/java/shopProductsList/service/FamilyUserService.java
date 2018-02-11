@@ -1,7 +1,10 @@
 package shopProductsList.service;
 
 
+import java.util.List;
+
 import shopProductsList.entity.FamilyUser;
+import shopProductsList.entity.Product;
 
 public interface FamilyUserService {
 
@@ -9,4 +12,5 @@ public interface FamilyUserService {
 	Iterable<FamilyUser> listAllUsers();	
 	FamilyUser findUserByEmail(String email);
 	boolean doesLoadUserHaveAFamily();
+	
 }
