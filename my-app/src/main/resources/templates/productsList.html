@@ -7,6 +7,7 @@
     <title>Lista produktów</title>
 
     <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+    
 </head>
 <body>
 <div class="container" id="containerDiv" >
@@ -23,36 +24,45 @@
  		 <span class="glyphicon glyphicon-refresh"></span>Odśwież liste</button></a>  
  		 </h2>       
      
-        <table class="table table-striped" id="users">
+        <table class="table table-striped" id="listProducts">
+        <thead>
             <tr>
-                <th>Id</th>
-                <th>Nazwa produktu</th>
-                <th>Sklep</th>
+                <th >Id</th>
+                <th >Nazwa produktu</th>
+                <th >Sklep</th>
                 <th>Częstość używania(Razy w tygodniu)</th>
-                <th>Średni koszt(Zł)</th>
-                <th>Ilość produktu[g]</th>
-                <th>Średnie zużycie na dzień[g]</th>
+                <th >Średni koszt(Zł)</th>
+                <th >Ilość produktu[g]</th>
+                <th >Średnie zużycie na dzień[g]</th>
                 <th> </th>
             
             </tr>
+        </thead>
+        
+        <tbody>    
             <tr th:each="product : ${products}">
-                <td th:text="${product.id}">Id</td>
-                <td th:text="${product.productName}">Nazwa produktu</td>
-                <td th:text="${product.shop}">Sklep</td>
-                <td th:text="${product.frequencyOfUse}">Częstość używania(Razy w tygodniu)</td>
-                <td th:text="${product.averageCost}">Średni koszt(Zł)</td>
-                <td th:text="${product.amount}">Ilość produktu[g]</td>
-                <td th:text="${product.amountPerDay}">Średnie zużycie na dzień[g]</td>
+                <td class="id" th:text="${product.id}">Id</td>
+                <td class="productName" th:text="${product.productName}">Nazwa produktu</td>
+                <td class="shop" th:text="${product.shop}">Sklep</td>
+                <td class="frequency" th:text="${product.frequencyOfUse}">Częstość używania(Razy w tygodniu)</td>
+                <td class="cost" th:text="${product.averageCost}">Średni koszt(Zł)</td>
+                <td class="amount" th:text="${product.amount}">Ilość produktu[g]</td>
+                <td class="amountPerDay" th:text="${product.amountPerDay}">Średnie zużycie na dzień[g]</td>
                 <td > <form method="POST" th:action="@{/{id}/delete(id=${product.id})}">
                 <button type="submit" class="btn btn-danger" aria-label="Left Align">
  				<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Usuń
 				</button></form></td>
                
             </tr>
+            </tbody>
         </table>
 
     </div>
 </div>
+<script>
 
+	new Tablesort(document.getElementById('listProducts'));
+
+</script>
 </body>
 </html>
