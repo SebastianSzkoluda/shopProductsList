@@ -36,7 +36,7 @@ public class AddUserToFamilyController {
 		familyUserService.addingUserToFamily(addingFamilyUser);
 		familyUserService.saveUser(addingFamilyUser);
 		
-		return "productsList";
+		return "index";
 				
 	}
 	

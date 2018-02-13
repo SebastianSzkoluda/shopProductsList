@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link href="../../static/css/bootstrap.min.css" th:href="@{/css/tlo.css}"
+		rel="stylesheet" media="screen" />
+    <title>Lista zakupów</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+    
+</head>
+<body>
+<div class="container" id="containerDiv" >
+ 
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+   
+    <div class="table" id="tableDiv">
+  
+        
+         <h2>Lista zakupów
+          <a href="/addProductToBuy"><button type="submit"  class="btn btn-success">
+		 <span class="glyphicon glyphicon-plus"></span> Dodaj nowy produkt</button></a>
+		<a href="/productsToBuyList"><button type="button"  class="btn btn-default">
+ 		 <span class="glyphicon glyphicon-refresh"></span>Odśwież liste</button></a>  
+ 		 </h2>       
+     
+        <table class="table table-striped" id="listProducts">
+        <thead>
+            <tr>
+                <th >Id</th>
+                <th >Nazwa produktu</th>
+                <th >Sklep</th>
+                <th>Cena[Zł]</th>
+                <th >Waga jednego produktu[g]</th>
+                <th >Ilość produktów</th>
+                <th> </th>
+            
+            </tr>
+        </thead>
+        
+        <tbody>    
+            <tr th:each="product : ${products}">
+                <td class="id" th:text="${product.id}">Id</td>
+                <td class="shopProductName" th:text="${product.shopProductName}">Nazwa produktu</td>
+                <td class="shop" th:text="${product.shop}">Sklep</td>
+                <td class="prize" th:text="${product.prize}">Cena[Zł]</td>
+                <td class="weightOfOneProduct" th:text="${product.weightOfOneProduct}">Waga jednego produktu[g]</td>
+                <td class="productQuantity" th:text="${product.productQuantity}">Ilość produktów</td>
+                <td > <form method="POST" th:action="@{/{id}/deleteShopProduct(id=${product.id})}">
+                <button type="submit" class="btn btn-danger" aria-label="Left Align">
+ 				<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Usuń
+				</button></form></td>
+               
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<script>
+
+	new Tablesort(document.getElementById('listProducts'));
+
+</script>
+</body>
+</html>

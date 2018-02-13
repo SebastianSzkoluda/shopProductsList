@@ -35,8 +35,19 @@ public class Family {
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "familyNameInUser", orphanRemoval = true, cascade = CascadeType.ALL)
 	 List<FamilyUser> familyUsers;
+	
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "familyNameInShopProduct", orphanRemoval = true, cascade = CascadeType.ALL)
+	 List<ShopProduct> productsToBuy;
 
 		
+	public List<ShopProduct> getProductsToBuy() {
+		return productsToBuy;
+	}
+
+	public void setProductsToBuy(List<ShopProduct> productsToBuy) {
+		this.productsToBuy = productsToBuy;
+	}
+
 	public List<Product> getProducts() {
 		return products;
 	}
