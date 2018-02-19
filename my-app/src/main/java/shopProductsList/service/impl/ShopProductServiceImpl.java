@@ -11,11 +11,9 @@ import org.springframework.stereotype.Service;
 
 import shopProductsList.entity.Family;
 import shopProductsList.entity.FamilyUser;
-import shopProductsList.entity.Product;
 import shopProductsList.entity.ShopProduct;
 import shopProductsList.repository.FamilyRepository;
 import shopProductsList.repository.FamilyUserRepository;
-import shopProductsList.repository.ProductRepository;
 import shopProductsList.repository.ShopProductRepository;
 import shopProductsList.service.ShopProductService;
 

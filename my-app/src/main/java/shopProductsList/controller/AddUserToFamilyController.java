@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import shopProductsList.entity.FamilyUser;
-import shopProductsList.entity.Product;
 import shopProductsList.repository.FamilyUserRepository;
 import shopProductsList.service.FamilyUserService;
 

@@ -14,6 +14,7 @@ public class ShopProductListApplication {
 	    return hemf.getSessionFactory();  
 	} 
     public static void main(String[] args) {
+    	
         SpringApplication.run(ShopProductListApplication.class, args);
     }
 }
